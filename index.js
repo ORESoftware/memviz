@@ -44,7 +44,7 @@ exports.memviz = function (opts) {
         }
     }, freq);
     return function (req, res) {
-        var htmlResult = template({ intervalSeconds: String(freq / 10000), ms: String(freq), aa: JSON.stringify(mem.newOne) });
+        var htmlResult = template({ intervalSeconds: String(freq / 1000), ms: String(freq), aa: JSON.stringify(mem.newOne) });
         res.send(htmlResult);
     };
 };
