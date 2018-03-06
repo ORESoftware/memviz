@@ -1,0 +1,14 @@
+
+### folders
+test
+scripts
+node_modules
+
+### matching
+*.json
+*.md
+*.sh
+*.ts
+
+### negation
+!*.d.ts
