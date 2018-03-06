@@ -18,8 +18,8 @@ exports.memviz = function (opts) {
     if (maxCount < 1001) {
         throw new Error('"maxCount" integer value must be greater than 1000 (100ms).');
     }
-    if (maxCount > 100000) {
-        throw new Error('"maxCount" integer value must be less than 100001.');
+    if (maxCount > 5000000) {
+        throw new Error('"maxCount" integer value must be less than 5000001.');
     }
     var templatePath = path.resolve(__dirname + '/templates/memviz.html');
     var source = fs.readFileSync(templatePath);

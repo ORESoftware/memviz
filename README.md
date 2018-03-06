@@ -21,10 +21,10 @@ app.use('/memory', memviz({
 ```
 
 
-If you do a `GET /memory`, you will see this in the browser:
+If you make a `GET /memory` request to your server, you will see this in the browser:
 
 <kbd>
-<img src="https://raw.githubusercontent.com/oresoftware/memviz/master/media/memviz.png">
+    <img src="https://raw.githubusercontent.com/oresoftware/memviz/master/media/memviz.png">
 </kbd>
 
 You can probably use an iframe to display this on a webpage as well.

@@ -1,7 +1,7 @@
 'use strict';
 
 //dts
-import {Router, RequestHandler} from 'express';
+import {RequestHandler} from 'express';
 
 //core
 import path = require('path');
