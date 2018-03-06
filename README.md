@@ -24,7 +24,7 @@ app.use('/memory', memviz({
 If you do a `GET /memory`, you will see this in the browser:
 
 
-![MemViz visual example](https://raw.githubusercontent.com/oresoftware/memviz/master/images/memviz.png)
+![MemViz visual example](https://raw.githubusercontent.com/oresoftware/memviz/master/media/memviz.png "Memviz Primary Image")
 
 
 You can probably use an iframe to display this on a webpage as well.
