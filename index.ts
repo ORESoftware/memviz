@@ -104,7 +104,7 @@ export const memviz = function (opts: MemVizOptions) {
     //   heapUsed: JSON.stringify(mem.heapUsed)
     // };
     
-    const htmlResult = template({ms: String(freq), aa: JSON.stringify(mem.newOne)});
+    const htmlResult = template({intervalSeconds: String(freq/10000), ms: String(freq), aa: JSON.stringify(mem.newOne)});
     res.send(htmlResult);
     
   }
