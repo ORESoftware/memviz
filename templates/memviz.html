@@ -7,15 +7,20 @@
     google.charts.load('current', {'packages': ['line']});
     google.charts.setOnLoadCallback(drawChart);
 
+
     {
       var to;
-      window.addEventListener('resize', function (event) {
+      window.addEventListener('resize', function () {
         clearTimeout(to);  // throttle this call
-        to = setTimeout(drawChart, 500);
+        if(window.memvizIsReady){
+          to = setTimeout(drawChart, 500);
+        }
       });
     }
 
     function drawChart() {
+
+      window.memvizIsReady = true;
 
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'Time unit');
@@ -33,7 +38,14 @@
       // ]);
       //
 
-      data.addRows(JSON.parse('{{{aa}}}'));
+      const values = JSON.parse('{{{aa}}}');
+
+      if(values.length < 1){
+        document.write('No memory usage data collected yet. Your collection interval is {{{ms}}}ms.');
+        return;
+      }
+
+      data.addRows(values);
 
       var options = {
 
@@ -59,6 +71,9 @@
       };
 
       var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      // console.log(JSON.stringify(data));
+      // console.log(JSON.stringify(options));
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
 
