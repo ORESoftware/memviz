@@ -1,0 +1,73 @@
+<html>
+<head>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+    google.charts.load('current', {'packages': ['line']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    {
+      var to;
+      window.addEventListener('resize', function (event) {
+        clearTimeout(to);  // throttle this call
+        to = setTimeout(drawChart, 500);
+      });
+    }
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Time unit');
+      data.addColumn('number', 'RSS');
+      data.addColumn('number', 'Heap Total');
+      data.addColumn('number', 'Heap Used');
+
+      //
+      // original sample call:
+      //
+      // data.addRows([
+      //   [1, 37.8, 80.8, 41.8],
+      //   [2, 30.9, 69.5, 32.4],
+      //   [3, 25.4, 57, 25.7],
+      // ]);
+      //
+
+      data.addRows(JSON.parse('{{{aa}}}'));
+
+      var options = {
+
+        hAxis: {title: "Entry every {{{ms}}} milliseconds."},
+        vAxis: {title: "Memory in Megabytes", format: 'decimal'},
+
+        chart: {
+          title: 'Node.js memory usage (RSS, Heap Used, Heap Total)',
+          subtitle: '(In megabytes.)'
+        },
+
+        // height: '100%',
+        // width: '100%',
+
+        width: window.innerWidth - (window.innerWidth)/20,
+        height: window.innerHeight - (window.innerHeight)/20,
+
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+
+
+  </script>
+
+
+</head>
+<body>
+<div id="line_top_x"></div>
+</body>
+</html>

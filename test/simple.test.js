@@ -22,10 +22,12 @@ if (!Number.isInteger(port)) {
   throw new Error('port is not an integer: ' + port);
 }
 
-app.listen(port, function () {
-  console.log('app is listening on port:', port)
-});
 
 app.on('error', function (err) {
   err && console.error(err.stack || err);
 });
+
+app.listen(port, function () {
+  console.log('app is listening on port:', port)
+});
+

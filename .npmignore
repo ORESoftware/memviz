@@ -3,6 +3,7 @@
 test
 scripts
 node_modules
+media
 
 ### matching
 *.json
