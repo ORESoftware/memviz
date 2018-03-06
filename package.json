@@ -1,6 +1,6 @@
 {
   "name": "memviz",
-  "version": "0.0.102",
+  "version": "0.0.103",
   "description": "Express middleware for rendering memory usage visualization.",
   "main": "index.js",
   "scripts": {
