@@ -1,0 +1,38 @@
+{
+  "name": "memviz",
+  "version": "0.0.102",
+  "description": "Express middleware for rendering memory usage visualization.",
+  "main": "index.js",
+  "scripts": {
+    "test": "suman test"
+  },
+  "typings": "index.d.ts",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ORESoftware/memviz.git"
+  },
+  "keywords": [
+    "Express",
+    "middleware",
+    "memory",
+    "heap",
+    "rss",
+    "visual",
+    "visualization",
+    "viz"
+  ],
+  "author": "Olegzandr V.D.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ORESoftware/memviz/issues"
+  },
+  "homepage": "https://github.com/ORESoftware/memviz#readme",
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "express": "^4.16.2"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.11"
+  }
+}
