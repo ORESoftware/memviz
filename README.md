@@ -15,8 +15,9 @@ const {memviz} = require('memviz');
 const app = express();
 
 app.use('/memory', memviz({
-  frequency: 100000,  // sample interval (in milliseconds)
-  maxCount: 200000  // maximum number of entries to store 
+  frequency: 100,  // sample interval (in seconds)
+  maxCount: 200000,  // maximum number of entries to store
+  maxAge: 4000000   // only keep entries young than this 
 }));
 ```
 

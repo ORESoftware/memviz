@@ -5,7 +5,9 @@ const {memviz} = require('memviz');
 const app = express();
 
 app.use('/memory', memviz({
-  frequency: 1000
+  frequency: 1,
+  maxCount: 1000,
+  maxAge: 100
 }));
 
 app.use(function (req, res, next) {
@@ -21,7 +23,6 @@ const port = parseInt(process.env.MEMVIZ_TEST_PORT || '3001');
 if (!Number.isInteger(port)) {
   throw new Error('port is not an integer: ' + port);
 }
-
 
 app.on('error', function (err) {
   err && console.error(err.stack || err);
