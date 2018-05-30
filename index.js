@@ -1,5 +1,4 @@
 'use strict';
-Object.defineProperty(exports, "__esModule", { value: true });
 var util = require("util");
 var path = require("path");
 var fs = require("fs");
@@ -120,4 +119,5 @@ exports.memviz = function (opts) {
         }
     };
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = exports.memviz;
